@@ -3,9 +3,25 @@
   "version": "0.2.0",
   "private": true,
   "dependencies": {
+    "@reduxjs/toolkit": "^1.8.2",
+    "axios": "^0.27.2",
+    "bcrypt": "^5.0.1",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "morgan": "^1.10.0",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-scripts": "^4.0.3"
+    "react-redux": "^8.0.2",
+    "react-router": "^6.3.0",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "^4.0.3",
+    "redux": "^4.2.0",
+    "sequelize": "^6.20.1"
   },
   "scripts": {
     "start": "concurrently 'npm run server' 'npm run client'",
@@ -13,7 +29,7 @@
     "client": "react-scripts start",
     "build": "react-scripts build"
   },
-  "proxy": "http://localhost:3001",
+  "proxy": "http://localhost:5000",
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -34,6 +50,6 @@
   },
   "devDependencies": {
     "concurrently": "^6.4.0",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.16"
   }
 }
