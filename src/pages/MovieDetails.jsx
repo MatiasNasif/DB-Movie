@@ -8,19 +8,12 @@ import { useSelector, useDispatch } from "react-redux";
 import { addFavorite, getFavorites, removeFavorite } from "../store/favorites";
 
 
-const MovieDetails = (
-  // { movies }
-  ) => {
+const MovieDetails = () => {
   // console.log(movies);
   const { movie_id } = useParams();
   const [isLoading, setIsLoading] = useState(true);
   const [movie, setMovie] = useState(null);
   const dispatch = useDispatch();
-
-
-  const favorites = useSelector((state => state.favorites))
-  const user = useSelector((state => state.user))
-
 
 
   useEffect(() => {

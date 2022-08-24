@@ -3,13 +3,8 @@ import axios from "axios";
 
 
 export const getFavorites = createAsyncThunk("GET_FAVORITES", () => {
-    
     const userId = JSON.parse(localStorage.getItem("user")).id
-    console.log(userId, "SOY USER ID DEL GET")
     return axios.get(`/api/favorites/${userId}`)
-    
-    .then(res => console.log(res.data))
-
 });
 
 export const addFavorite = createAsyncThunk("ADD_FAVORITE", (movieId) => {
