@@ -15,24 +15,6 @@ router.post("/add/:userId/:movieId", (req, res) => {
     .catch(err => console.log(err))
 })
     
-    // const { id, title, user} = req.body;
-    // Favorite.findOrCreate({
-    //     where: { favoriteId: id, userId: user},
-    //     defaults: {
-    //         favoriteId: id,
-    //         favoriteTitle: title,
-    //         // poster_path: poster_path,
-    //     },  
-    // })
-    // .then((favMovie)=>{
-    //     const user = req.body.user
-    //     favMovie.setUser(user)
-    // })
-    // .then(() => sendStatus(204))
-    // .catch(err => console.log(err))
-//});
-
-
 
 //muestro los favs de un user
 

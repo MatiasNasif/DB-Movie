@@ -3,20 +3,17 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { Spinner } from "../components/Spinner";
 import styles from "./MovieDetails.module.css";
-import { GrFavorite } from "react-icons/gr"
+import { GrFavorite } from "react-icons/gr";
 import { useSelector, useDispatch } from "react-redux";
 import { addFavorite, getFavorites, removeFavorite } from "../store/favorites";
 
-
 const MovieDetails = () => {
-  // console.log(movies);
   const { movie_id } = useParams();
   const [isLoading, setIsLoading] = useState(true);
   const [movie, setMovie] = useState(null);
   const dispatch = useDispatch();
 
-  const userId= JSON.parse(localStorage.getItem("user")).id
-
+  const userId = JSON.parse(localStorage.getItem("user")).id;
 
   useEffect(() => {
     setIsLoading(true);
@@ -31,33 +28,15 @@ const MovieDetails = () => {
       .catch((err) => console.log(err));
   }, [movie_id]);
 
-
   if (isLoading) {
     return <Spinner />;
   }
 
   if (!movie) return null;
 
-  
-
-    const handleAddFavorite = (movie) => {
-       console.log(movie, "SOY MOVIE IZQUIERDA")
-        // console.log(movie_id, "MOVIE ID IZQUIERDA");
-      dispatch(addFavorite(movie))
-      .then(()=>dispatch(getFavorites()))
-
-        //  axios
-        // .post(`/api/favorites/add/${userId}/${movie_id}`, {
-        //   original_title: movie.original_title,
-        //   poster_path: movie.poster_path,
-        // })
-        // .then((res)=>console.log(res.data, "SOY RES"))
-    }
-
-
-
-
-
+  const handleAddFavorite = (movie) => {
+    dispatch(addFavorite(movie)).then(() => dispatch(getFavorites()));
+  };
 
   return (
     <div className={styles.detailsContainer}>
@@ -90,10 +69,10 @@ const MovieDetails = () => {
         </p>
         <div className="controls">
           <button type="button" className="btn btn-danger btn-sm">
-            <GrFavorite onClick={() => handleAddFavorite(movie)}/>
+            <GrFavorite onClick={() => handleAddFavorite(movie)} />
           </button>
         </div>
-      </div>  
+      </div>
     </div>
   );
 };
