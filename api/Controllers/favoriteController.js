@@ -3,14 +3,11 @@ const Favorite = require("../models/Favorite");
 const router = express.Router();
 
 router.post("/add/:userId/:movieId", (req, res) => {
-    console.log(req.body)
-
-    console.log(req.params)
     Favorite.findOrCreate({
         where: { 
             userId: req.params.userId,
             favoriteId: req.params.movieId,
-            favoriteTitle: req.body.original_title,
+            original_title: req.body.original_title,
             poster_path: req.body.poster_path
         }
     })

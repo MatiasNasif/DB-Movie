@@ -8,7 +8,7 @@ Favorite.init(
     favoriteId: {
       type: Sequelize.INTEGER,
     },
-    favoriteTitle: {
+    original_title: {
       type: Sequelize.STRING,
     },
     poster_path: {

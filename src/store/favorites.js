@@ -7,26 +7,16 @@ export const getFavorites = createAsyncThunk("GET_FAVORITES", () => {
     return axios.get(`/api/favorites/${userId}`)
 });
 
-export const addFavorite = createAsyncThunk("ADD_FAVORITE", (movieId) => {
-    // console.log(movieId, "SOY MOVIE ID") //DATA ES EL ID DE LA PELI
+export const addFavorite = createAsyncThunk("ADD_FAVORITE", (movie) => {
     const userId= JSON.parse(localStorage.getItem("user")).id
-    // console.log(userId, "SOY USER")
-    return axios.post(`/api/favorites/add/${userId}/${movieId}`)
+    return axios.post(`/api/favorites/add/${userId}/${movie.id}`,{
+        original_title: movie.original_title,
+        poster_path: movie.poster_path,
+    })
+  
 });
 
 
-// export const addFavorite = createAsyncThunk("ADD_FAVORITE", async (movie,user) => {
-//     const addFav = await axios.post("http://localhost:5000/api/favoritos/add", {
-//       original_title: movie.original_title,
-//       code: movie.id,
-//       poster_path: movie.poster_path,
-//       overview: movie.overview,
-//       userId: user.id,
-//       vote_average: movie.vote_average,
-    
-//     });
-//     return addFav.data;
-//   });
 
 
 export const removeFavorite = createAsyncThunk("REMOVE_FAVORITE", (data) => {

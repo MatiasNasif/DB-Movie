@@ -15,6 +15,8 @@ const MovieDetails = () => {
   const [movie, setMovie] = useState(null);
   const dispatch = useDispatch();
 
+  const userId= JSON.parse(localStorage.getItem("user")).id
+
 
   useEffect(() => {
     setIsLoading(true);
@@ -36,23 +38,25 @@ const MovieDetails = () => {
 
   if (!movie) return null;
 
-  const handleAddFavorite = () =>{
-  //   axios
-  //     .post(`http://localhost:5000/api/add/${userId}/${favoriteId}`, {
-  //       userId: movie.params.userId,
-  //           favoriteId: movie.params.movieId,
-  //           favoriteTitle: movie.body.original_title,
-  //           poster_path: movie.body.poster_path
-  //     })
-  //     .then(()=> console.log())
-  };
+  
+
+    const handleAddFavorite = (movie) => {
+       console.log(movie, "SOY MOVIE IZQUIERDA")
+        // console.log(movie_id, "MOVIE ID IZQUIERDA");
+      dispatch(addFavorite(movie))
+      .then(()=>dispatch(getFavorites()))
+
+        //  axios
+        // .post(`/api/favorites/add/${userId}/${movie_id}`, {
+        //   original_title: movie.original_title,
+        //   poster_path: movie.poster_path,
+        // })
+        // .then((res)=>console.log(res.data, "SOY RES"))
+    }
 
 
 
-  // const handleRemoveFavorite = (id) =>{
-  //   dispatch(removeFavorite(id))
-  //   .then(()=> dispatch(getFavorites()))
-  // };
+
 
 
   return (
@@ -86,7 +90,7 @@ const MovieDetails = () => {
         </p>
         <div className="controls">
           <button type="button" className="btn btn-danger btn-sm">
-            <GrFavorite onClick={() => handleAddFavorite(movie.id)}/>
+            <GrFavorite onClick={() => handleAddFavorite(movie)}/>
           </button>
         </div>
       </div>  

@@ -6,9 +6,6 @@ import FavoritesDetails from './FavoritesDetails';
 
 export default function Favorites() {
 
-
-  const userId = JSON.parse(localStorage.getItem("user")).id
-
   const dispatch = useDispatch();
 
   useEffect(() => {
