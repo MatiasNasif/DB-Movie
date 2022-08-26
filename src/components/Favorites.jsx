@@ -17,7 +17,7 @@ export default function Favorites() {
   };
 
   return (
-    <div className={styles.moviesGrid}>
+    <ul className={styles.moviesGrid}>
       {movies?.map((movie) => (
         <FavoritesDetails
           key={movie.id}
@@ -25,6 +25,6 @@ export default function Favorites() {
           handleRemoveFavorites={handleRemoveFavorites}
         /> //el movie={movie} pasa por prop a FavoritesDetails
       ))}
-    </div>
+    </ul>
   );
 }

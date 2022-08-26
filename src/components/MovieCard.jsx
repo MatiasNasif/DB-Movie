@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 import styles from "./MovieCard.module.css";
-// import { GrFavorite } from "react-icons/gr";
-// import Watchlist from "./Watchlist";
 
 const MovieCard = ({ movie }) => {
   return (
