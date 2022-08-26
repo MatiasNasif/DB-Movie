@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Navbar.module.css";
 import LogoRed from "../images/LogoViolet.png";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FiLogIn, FiLogOut } from "react-icons/fi";
 import { userLogout } from "../store/user";
 import { useDispatch } from "react-redux";
@@ -33,7 +33,11 @@ const Navbar = () => {
           <span className={styles.span}>Movies </span>
           <span className={styles.span}>Series </span>
           <span className={styles.span}>Popular </span>
-          <span className={styles.span}>My List </span>
+         
+          {/* // <button onClick={()=>navigate("/favorites/:id")}> */}
+          <Link style={{color: '#FFF'}} to={`/favorites/${user.id}`}><span className={styles.span}>My List </span></Link>
+         
+          {/* </button> */}
         </div>
       </div>
 

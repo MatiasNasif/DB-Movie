@@ -14,9 +14,9 @@ export const addFavorite = createAsyncThunk("ADD_FAVORITE", (movie) => {
   });
 });
 
-export const removeFavorite = createAsyncThunk("REMOVE_FAVORITE", (data) => {
+export const removeFavorite = createAsyncThunk("REMOVE_FAVORITE", (movie) => {
   const userId = JSON.parse(localStorage.getItem("user")).id;
-  return axios.delete(`api/favorites/${userId}/remove/${data}`);
+  return axios.delete(`/api/favorites/${userId}/${movie.favoriteId}`);
 });
 
 const favoritesReducer = createReducer([], {

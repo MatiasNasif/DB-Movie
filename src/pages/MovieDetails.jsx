@@ -35,7 +35,8 @@ const MovieDetails = () => {
   if (!movie) return null;
 
   const handleAddFavorite = (movie) => {
-    dispatch(addFavorite(movie)).then(() => dispatch(getFavorites()));
+    dispatch(addFavorite(movie))
+    .then(() => dispatch(getFavorites()));
   };
 
   return (
