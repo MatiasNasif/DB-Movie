@@ -13,7 +13,7 @@ const MovieDetails = () => {
   const [movie, setMovie] = useState(null);
   const dispatch = useDispatch();
 
-  const userId = JSON.parse(localStorage.getItem("user")).id;
+  const user = JSON.parse(localStorage.getItem("user"));
 
   useEffect(() => {
     setIsLoading(true);
@@ -35,8 +35,7 @@ const MovieDetails = () => {
   if (!movie) return null;
 
   const handleAddFavorite = (movie) => {
-    dispatch(addFavorite(movie))
-    .then(() => dispatch(getFavorites()));
+    dispatch(addFavorite(movie)).then(() => dispatch(getFavorites()));
   };
 
   return (
@@ -68,10 +67,13 @@ const MovieDetails = () => {
           <strong>Rating: </strong>
           {movie.vote_average.toFixed(1)}
         </p>
+
         <div className="controls">
-          <button type="button" className="btn btn-danger btn-sm">
-            <GrFavorite onClick={() => handleAddFavorite(movie)} />
-          </button>
+          {user ? (
+            <button type="button" className="btn btn-danger btn-sm">
+              <GrFavorite onClick={() => handleAddFavorite(movie)} />
+            </button>
+          ) : null}
         </div>
       </div>
     </div>

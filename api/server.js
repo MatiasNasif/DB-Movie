@@ -7,6 +7,7 @@ const cookieParser = require("cookie-parser")
 const bodyParser = require("body-parser")
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy
+const cors = require("cors")
 
 const models= require("./models") 
 
@@ -21,6 +22,9 @@ const authAPI = require("./routes");
 // const routes = require("./routes")
 
 app.use(express.json());
+
+const whitelist = ["https://localhost:5000", ]
+app.use(cors());
 
 
 
