@@ -5,7 +5,7 @@ import { AiFillDelete } from "react-icons/ai";
 const FavoritesDetails = ({ movie, handleRemoveFavorites }) => {
   return (
     <>
-      <h3>{movie.original_title}</h3>
+      <h3 className={styles.movieTitle}>{movie.original_title}</h3>
       <img
         className={styles.movieImage}
         width={230}

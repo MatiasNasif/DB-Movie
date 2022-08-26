@@ -1,8 +1,8 @@
-import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getFavorites, removeFavorite } from "../store/favorites";
 import FavoritesDetails from "./FavoritesDetails";
+import styles from "./Favorites.module.css"
 
 export default function Favorites() {
   const dispatch = useDispatch();
@@ -12,14 +12,12 @@ export default function Favorites() {
     dispatch(getFavorites());
   }, []);
 
-
   const handleRemoveFavorites = (movie) => {
-    dispatch(removeFavorite(movie))
-    .then(()=>dispatch(getFavorites()))
-  }
+    dispatch(removeFavorite(movie)).then(() => dispatch(getFavorites()));
+  };
 
   return (
-    <div>
+    <div className={styles.moviesGrid}>
       {movies?.map((movie) => (
         <FavoritesDetails
           key={movie.id}

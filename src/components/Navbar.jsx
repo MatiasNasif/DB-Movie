@@ -30,17 +30,9 @@ const Navbar = () => {
             id={styles.logo}
             onClick={() => navigate("/")}
           />
-          <span className={styles.span}>Movies </span>
-          <span className={styles.span}>Series </span>
-          <span className={styles.span}>Popular </span>
-         
-          {/* // <button onClick={()=>navigate("/favorites/:id")}> */}
           <Link style={{color: '#FFF'}} to={`/favorites/${user.id}`}><span className={styles.span}>My List </span></Link>
-         
-          {/* </button> */}
         </div>
       </div>
-
       {user ? (
         <div className={styles.right} onClick={handleLogout}>
           <FiLogOut />
