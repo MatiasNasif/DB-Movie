@@ -1,5 +1,4 @@
 // Configuración del server
-
 const express = require ("express")
 const morgan = require("morgan");
 const session=require("express-session")
@@ -89,6 +88,7 @@ app.use(morgan("dev"));
 // app.use("/api", routes);
 
 app.use("/api", authAPI);
+
 app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "./src/public", "index.html"));
 });
