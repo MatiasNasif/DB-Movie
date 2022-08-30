@@ -2,14 +2,26 @@ import "../styles/Navbar.css";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import iconLogoNavbar from "../assets/iconLogoNavbar.svg";
-
+import { userLogout } from "../store/user.js";
+import { useDispatch} from "react-redux";
 
 const NavBar = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const user = JSON.parse(localStorage.getItem("user"));
+
+  //boton que desloguea un usuario
+  const handleLogout = () => {
+    dispatch(userLogout())
+    .then(()=> navigate("/"));
+  }
+
   return (
     <header>
-      <div clasName="navbar">
+      <div className="navbar">
         <Navbar expand="lg" fixed="top">
           <Container>
             <Link to="/">
@@ -25,11 +37,28 @@ const NavBar = () => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
-                <Nav.Link href="#movies">Movies</Nav.Link>
+                <Nav.Link as={Link} to="/">Movies</Nav.Link>
                 <Nav.Link href="#tvshows">TV Shows</Nav.Link>
-                <Nav.Link href="#favorites">Favorites</Nav.Link>
-                <Nav.Link as={Link} to="/register">Register</Nav.Link>
-                <Nav.Link href="#login">Log In</Nav.Link>
+                {user ? ( 
+                <Nav.Link as={Link} to="/favorites">
+                  Favorites
+                  </Nav.Link>
+                  ) : null}
+                {!user ? (
+                  <Nav.Link as={Link} to="/register">
+                    Register
+                  </Nav.Link>
+                ) : null}
+                {user ? (
+                  <div onClick={handleLogout}>
+                  <Nav.Link>
+                  Log Out
+                </Nav.Link>
+                  </div>
+                ) : (
+                  <Nav.Link as={Link} to="/login">
+                  Log In
+                </Nav.Link>)}
               </Nav>
             </Navbar.Collapse>
           </Container>

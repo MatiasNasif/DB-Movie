@@ -15,6 +15,7 @@ const MoviesGrid = () => {
       .then((res) => setMovies(res.data.results));
   }, []);
 
+
   return (
     <ul className="movie-grid-container">
       {movies.map((movie) => (

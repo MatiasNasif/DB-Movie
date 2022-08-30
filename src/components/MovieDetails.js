@@ -2,6 +2,7 @@ import "../styles/MovieDetails.css"
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import iconFavorites from "../assets/iconFavorites.svg"
 
 const MovieDetails = () => {
   const { id } = useParams();
@@ -18,7 +19,8 @@ const MovieDetails = () => {
   },[])
 
   return (<div className="movie-card-container">
-    <img src={`${imgUrl}${movieDetails.poster_path}`} alt={movieDetails.title}></img>
+      <img className="icon-favorites" src={iconFavorites} alt="icon-favorites"></img>
+      <img clasName="img-path" src={`${imgUrl}${movieDetails.poster_path}`} alt={movieDetails.title}></img>
     <h4>{movieDetails.title}</h4>
     <p>{movieDetails.overview}</p>
 </div>)

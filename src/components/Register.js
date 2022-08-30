@@ -5,7 +5,6 @@ import { useDispatch } from "react-redux";
 import { userRegister } from "../store/user";
 import { useLocation, useNavigate } from "react-router";
 import { useEffect } from "react";
-import axios from "axios";
 
 const Register = () => {
   const firstName = useInput();
@@ -19,6 +18,7 @@ const Register = () => {
 
   const user = JSON.parse(localStorage.getItem("user"));
 
+  //impide que un usuario logueado ingrese /register
   useEffect(() => {
     if (user) {
       if (location.pathname === "/register") {
@@ -38,9 +38,9 @@ const Register = () => {
       })
     )
       .then((regUser) => {
-        if (!regUser.error) navigate("/login");
+        if (!regUser.error) navigate("/login"); //redirecciona a un usuario registrado al log in
       })
-      .catch((err) => console.log("CATCH", err));
+      .catch((err) => console.log(err));
   };
 
   return (
