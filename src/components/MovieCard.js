@@ -7,9 +7,9 @@ const MovieCard = ({ movie }) => {
   return (
     <div className="movie-card-container">
       <Link to={`/movie/${movie.id}`}>
-        <img src={`${imgUrl}${movie.poster_path}`} alt={movie.title}></img>
+        <img src={`${imgUrl}${movie.poster_path}`} alt={movie.original_title}></img>
       </Link>
-      <h4>{movie.title}</h4>
+      <h4>{movie.original_title}</h4>
     </div>
   );
 };

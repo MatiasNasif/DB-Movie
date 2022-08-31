@@ -33,6 +33,9 @@ User.init(
     salt: {
       type: Sequelize.STRING,
     },
+    admin: {
+      type: Sequelize.STRING,
+    },
   },
   { sequelize: db, modelName: "user" }
 );

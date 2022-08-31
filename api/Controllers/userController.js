@@ -3,10 +3,6 @@ const Users = require("../models/Users");
 const router = express.Router();
 const passport = require("passport");
 
-//muestra todos los usuarios
-router.get("/", (req, res) => {
-  Users.findAll().then((users) => res.send(users));
-});
 
 //muestra un usuario
 router.get("/:id", (req, res) => {
@@ -43,11 +39,6 @@ router.get("/me", (req, res) => {
   res.send(req.user);
 });
 
-//borra un usuario
-router.delete("/:id", (req, res) => {
-  const { id } = req.params;
-  Users.destroy({ where: { id } }).then(() => res.sendStatus(202));
-});
 
 router.use("/", (req, res) => {
   res.sendStatus(404);

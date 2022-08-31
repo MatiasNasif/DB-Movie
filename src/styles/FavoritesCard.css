@@ -1,0 +1,20 @@
+.favorite-card-container {
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.favorite-card-container img {
+  border-radius: 10px;
+  background-color: var(--primary-color);
+  width: 230px;
+  height: 345px;
+  margin-bottom: 20px;
+}
+
+.favorite-card-container div button {
+  margin-bottom: 20px;
+}
+
+.favorite-card-container h4 {
+  font-size: 1.5rem;
+}

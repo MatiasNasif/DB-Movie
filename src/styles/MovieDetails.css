@@ -1,3 +1,33 @@
-.icon-favotites{
-    background:none !important;
+.movie-details-container {
+  color: var(--primary-color);
+  text-align: center;
+  margin-top: 100px;
+}
+
+.img-path {
+  border-radius: 10px;
+  background-color: var(--primary-color);
+  width: 230px;
+  height: 345px;
+  margin-bottom: 20px;
+}
+
+.movie-details-container div button {
+  margin-bottom: 20px;
+}
+
+.icon-favorites {
+  width: 30px;
+  height: 30px;
+}
+
+.movie-details-container h4 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.movie-details-container p {
+  font-size: 1rem;
+  margin-left: 10px;
+  margin-right: 10px;
 }
