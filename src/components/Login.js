@@ -3,7 +3,7 @@ import Form from "react-bootstrap/Form";
 import useInput from "../utils/useInput.js";
 import { useDispatch } from "react-redux";
 import { userLogin } from "../store/user";
-import { useLocation, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 import { useEffect } from "react";
 
 const Login = () => {
@@ -11,19 +11,20 @@ const Login = () => {
   const password = useInput();
 
   const dispatch = useDispatch();
-  const location = useLocation();
   const navigate = useNavigate();
 
   const user = JSON.parse(localStorage.getItem("user"));
+  
 
   //impide que un usuario logueado ingrese /login
   useEffect(() => {
     if (user) {
-      if (location.pathname === "/login") {
-        navigate("/");
-      }
+      navigate("/")
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+   // la linea 23 evita el warning de user y navigate por que no estan declarados dentro de useEffect
+
 
   const handleSubmit = (e) => {
     e.preventDefault();

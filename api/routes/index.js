@@ -7,6 +7,6 @@ const adminRouter = require("../Controllers/adminController")
 
 router.use("/users", userRouter);
 router.use("/favorites", favoriteRouter);
-router.use("admin", adminRouter)
+router.use("/admin", adminRouter)
 
 module.exports = router;

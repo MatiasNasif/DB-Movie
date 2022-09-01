@@ -9,6 +9,7 @@ const FavoritesCard = ({ movieFavorite }) => {
 
   const dispatch = useDispatch();
 
+  //remueve una pelicula de favoritos
   const handleRemove = (movieFavorite) => {
     dispatch(removeFavorite(movieFavorite))
     .then(() =>  dispatch(getFavorites()));

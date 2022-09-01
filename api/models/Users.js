@@ -34,7 +34,8 @@ User.init(
       type: Sequelize.STRING,
     },
     admin: {
-      type: Sequelize.STRING,
+      type: Sequelize.BOOLEAN,
+      defaultValue: false,
     },
   },
   { sequelize: db, modelName: "user" }

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { getFavorites } from "../store/favorites"
 import "../styles/MoviesGrid.css"
@@ -10,9 +10,12 @@ const Favorites = () => {
 
   //trae el estado de redux favorites donde estan las peliculas favoritas
   useEffect(()=>{
-    dispatch(getFavorites())
+    dispatch(getFavorites());
+     // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
+  // la linea 14 evita el warning de dispatch por que no estan declarados dentro de useEffect
 
+  
   //guarda en moviesFavorites las peliculas favoritas guardadas en el estado de redux
   const moviesFavorites = useSelector((state) => state.favorites).data
 

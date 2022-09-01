@@ -1,11 +1,13 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css" 
-import MoviesGrid from "./components/MoviesGrid";
 import NavBar from "./components/NavBar";
 import MovieDetails from "./components/MovieDetails";
 import Register from "./components/Register"
 import Login from "./components/Login";
 import Favorites from "./components/Favorites"
+import UsersGrid from "./components/UsersGrid";
+import Home from "./components/Home";
+import SearchGrid from "./components/SearchGrid";
 
 function App() {
   return (
@@ -13,11 +15,14 @@ function App() {
       <div>
         <NavBar/>
         <Routes>
-          <Route path="/" element={<MoviesGrid/>}/>
+          <Route path="/" element={<Home/>}/>
           <Route path="/movie/:id" element={<MovieDetails/>}/>
           <Route path="/register" element={<Register/>} />
           <Route path="/login" element={<Login/>} />
           <Route path="/favorites" element={<Favorites/>} />
+          <Route path="/search/:value" element={<SearchGrid/>} />
+
+          <Route path="/admin/users" element={<UsersGrid/>} />
         </Routes>
       </div>
     </BrowserRouter>

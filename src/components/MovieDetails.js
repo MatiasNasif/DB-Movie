@@ -16,11 +16,17 @@ const MovieDetails = () => {
   
   const [movieDetails, setMovieDetails] = useState([]);
 
+  //trae los datos de un pelicula en particular y los setea en setMovieDetails
   useEffect(()=> {
     axios
      .get(`${url}/movie/${id}?${apiKey}&language=en-US`)
      .then((res) => setMovieDetails(res.data))
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
+// la linea 23 evita el warning de url, id, apikey por que no estan declarados dentro de useEffect
+
+
+  //agrefa una pelicula a favoritos
   const handleFavorites = (movieDetails) => {
     dispatch(addFavorite(movieDetails))
     .then(()=> dispatch(getFavorites()))
