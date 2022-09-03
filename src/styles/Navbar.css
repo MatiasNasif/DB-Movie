@@ -1,3 +1,14 @@
 .navbar{
-    background-color: var(--tertiary-color);    
+    background-color: black
 }
+
+.navbar-text{
+    font-size: 25px;
+}
+
+.logo{
+    background: linear-gradient(1.5708rad, rgb(117, 62, 239) 25%, rgb(185, 8, 246) 100%);
+    border-radius: 50%;
+    padding: 5px;
+}
+

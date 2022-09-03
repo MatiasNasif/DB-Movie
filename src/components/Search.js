@@ -20,8 +20,8 @@ const Search = () => {
   return (
     <div className="search-container">
       <form onSubmit={handleSubmit}>
-        <input
-          placeholder="Search"
+        <input className="input-search"
+          placeholder= "Search"
           type="search"
           onChange={handleSearch}
           value={searchMovies}

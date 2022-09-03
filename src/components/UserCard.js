@@ -21,7 +21,7 @@ const UserCard = ({ user }) => {
       <h1>{user.firstName}</h1>
       <button onClick={()=> handleUpdate(user)}>admin</button>
       <button>user</button>
-      <button onClick={()=> handleDelete(user)}>borrar</button>
+      <button onClick={()=> handleDelete(user)}>delete</button>
     </div>
   );
 };

@@ -7,7 +7,6 @@ import iconLogoNavbar from "../assets/iconLogoNavbar.svg";
 import { userLogout } from "../store/user.js";
 import { useDispatch } from "react-redux";
 
-
 const NavBar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -22,49 +21,59 @@ const NavBar = () => {
   return (
     <header>
       <div className="navbar">
-        <Navbar expand="lg" fixed="top">
+        <Navbar variant="dark" expand="lg" fixed="top">
           <Container>
             <Link to="/">
               <img
+                className="logo"
                 src={iconLogoNavbar}
                 alt="logo-navbar"
                 style={{
                   width: "35px",
-                  borderRadius: "50%",
                 }}
               />
             </Link>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
-                <Nav.Link as={Link} to="/">
+                <Nav.Link className="navbar-text" as={Link} to="/">
                   Movies
                 </Nav.Link>
-                <Nav.Link href="#tvshows">TV Shows</Nav.Link>
+                <Nav.Link className="navbar-text" href="#tvshows">
+                  TV Shows
+                </Nav.Link>
 
-                {// condiciones para usuario
-                (user && user.admin === false) ? (
-                  <Nav.Link as={Link} to="/favorites">
-                    Favorites
-                  </Nav.Link>
-                ) : null}
-                {//condiciones para admin
-                  (user && user.admin === true) ? (
-                    <Nav.Link as={Link} to="/admin/users">
-                    Users
-                  </Nav.Link>
-                  ) : null}
+                {
+                  // condiciones para usuario
+                  user && user.admin === false ? (
+                    <Nav.Link className="navbar-text" as={Link} to="/favorites">
+                      Favorites
+                    </Nav.Link>
+                  ) : null
+                }
+                {
+                  //condiciones para admin
+                  user && user.admin === true ? (
+                    <Nav.Link
+                      className="navbar-text"
+                      as={Link}
+                      to="/admin/users"
+                    >
+                      Users
+                    </Nav.Link>
+                  ) : null
+                }
                 {!user ? (
-                  <Nav.Link as={Link} to="/register">
+                  <Nav.Link className="navbar-text" as={Link} to="/register">
                     Register
                   </Nav.Link>
                 ) : null}
                 {user ? (
                   <div onClick={handleLogout}>
-                    <Nav.Link>Log Out</Nav.Link>
+                    <Nav.Link className="navbar-text">Log Out</Nav.Link>
                   </div>
                 ) : (
-                  <Nav.Link as={Link} to="/login">
+                  <Nav.Link className="navbar-text" as={Link} to="/login">
                     Log In
                   </Nav.Link>
                 )}

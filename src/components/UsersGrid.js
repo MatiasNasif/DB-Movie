@@ -23,14 +23,19 @@ const UsersGrid = () => {
   //se guardan los usuarios que provienen de redux
   const users = useSelector((state) => state.admin)
 
-  return (<ul>
+  return (
+    <>
+      <h2>Manage Users</h2>
+  <ul>
     {(users === null) ? null : users.data.map((user)=>(
       (user.lastName !== userLocal.lastName) ? ( // IMPORTANTE muestra todos excepto el que esta logueado = localStorage
-        <UserCard key={user.id} user={user}/>
+         <UserCard key={user.id} user={user}/>
+       
       ) : null
       
     ))}
-  </ul>);
+  </ul>
+  </>);
 };
 
 export default UsersGrid;
