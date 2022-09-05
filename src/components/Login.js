@@ -55,7 +55,7 @@ const Login = () => {
           <br></br>
           <input type="password" placeholder="Password" {...password}></input>
         </Form.Group>
-        <button type="submit">Submit</button>
+        <button className="button-login" type="submit">Submit</button>
       </Form>
     </div>
   );

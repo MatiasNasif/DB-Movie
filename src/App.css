@@ -2,6 +2,7 @@
     --primary-color: #f4f4f4;
     --secundary-color: #0f0f0f;
     --tertiary-color: #f34242;
+    --gradient-button: linear-gradient(1.5708rad, rgba(30,213,169) 25%, rgba(1,180,228, 1) 100%);
 }
 
 body{

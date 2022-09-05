@@ -3,9 +3,10 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link, useNavigate } from "react-router-dom";
-import iconLogoNavbar from "../assets/iconLogoNavbar.svg";
+//import iconLogoNavbar from "../assets/iconLogoNavbar.svg";
 import { userLogout } from "../store/user.js";
 import { useDispatch } from "react-redux";
+import iconLogo from "../assets/iconLogo.svg"
 
 const NavBar = () => {
   const dispatch = useDispatch();
@@ -26,11 +27,8 @@ const NavBar = () => {
             <Link to="/">
               <img
                 className="logo"
-                src={iconLogoNavbar}
+                src={iconLogo}
                 alt="logo-navbar"
-                style={{
-                  width: "35px",
-                }}
               />
             </Link>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />

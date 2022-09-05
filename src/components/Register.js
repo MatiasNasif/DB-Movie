@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { userRegister } from "../store/user";
 import { useNavigate } from "react-router";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Register = () => {
   const firstName = useInput();
@@ -76,7 +77,8 @@ const Register = () => {
           <br></br>
           <input type="password" placeholder="Password" {...password}></input>
         </Form.Group>
-        <button type="submit">Submit</button>
+        <h5>Are you already registered ? <Link className="link-login" to="/login">log in</Link></h5>
+        <button className="button-register" type="submit">Submit</button>
       </Form>
     </div>
   );

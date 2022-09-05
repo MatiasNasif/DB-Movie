@@ -5,11 +5,7 @@
 }
 
 .search-container input {
-  background: linear-gradient(
-    1.5708rad,
-    rgb(117, 62, 239) 25%,
-    rgb(185, 8, 246) 100%
-  );
+  background: var(--gradient-button);
   border: none;
   padding: 10px;
   border-radius: 10px;
