@@ -6,8 +6,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { userLogout } from "../store/user.js";
 import { useDispatch } from "react-redux";
 import iconLogo from "../assets/iconLogo.svg"
-import iconSearch from "../assets/iconSearch.svg"
-import iconProfile from "../assets/iconProfile.svg"
+import { BsFillPersonFill } from "react-icons/bs"
+import { BiSearchAlt } from "react-icons/bi"
 
 const NavBar = () => {
   const dispatch = useDispatch();
@@ -25,20 +25,14 @@ const NavBar = () => {
       <div className="navbar">
         <Navbar variant="dark" expand="lg" fixed="top">
           <Container className="style-navbar">
-            <Link to="/">
-              <img
-                className="profile"
-                src={iconProfile}
-                alt="logo-profile"
-              />
+            <div>
+            <Link to="/search">
+              <BiSearchAlt className="search" />
             </Link>
-            <Link to="/">
-              <img
-                className="search"
-                src={iconSearch}
-                alt="logo-search"
-              />
+            <Link to="/profile">
+              <BsFillPersonFill className="profile"/>
             </Link>
+            </div>
             <Link to="/">
               <img
                 className="logo"

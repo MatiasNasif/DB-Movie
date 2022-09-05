@@ -8,6 +8,8 @@ import Favorites from "./components/Favorites"
 import UsersGrid from "./components/UsersGrid";
 import Home from "./components/Home";
 import SearchGrid from "./components/SearchGrid";
+import Search from "./components/Search";
+import Profile from "./components/Profile";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
           <Route path="/login" element={<Login/>} />
           <Route path="/favorites" element={<Favorites/>} />
           <Route path="/search/:value" element={<SearchGrid/>} />
+          <Route path="/search" element={<Search/>} />
+          <Route path="/profile" element={<Profile/>} />
 
           <Route path="/admin/users" element={<UsersGrid/>} />
         </Routes>

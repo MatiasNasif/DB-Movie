@@ -4,11 +4,21 @@
   justify-content: center;
 }
 
+.search-container h1{
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+
 .search-container input {
-  background: var(--gradient-button);
-  border: none;
-  padding: 10px;
-  border-radius: 10px;
+  border-radius: 4px;
+    background: rgb(49, 52, 62);
+    border: none;
+    padding: 15px;
+    backdrop-filter: blur(50px);  
+    color: var(--primary-color);
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 .input-search::placeholder {

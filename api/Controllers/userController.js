@@ -13,7 +13,6 @@ router.get("/:id", (req, res) => {
 
 //registra un usuario
 router.post("/register", (req, res) => {
-  console.log(req.body);
   Users.create(req.body)
     .then((user) => {
       res.status(201).send(user);
@@ -33,6 +32,17 @@ router.post("/logout", function (req, res, next) {
     res.sendStatus(200);
   });
 });
+
+//edita campos de un usuario
+router.put("/:id", (req, res) => {
+  Users.update(req.body,{
+      where: { id: req.params.id },
+      returning: true,
+      plain: true
+  })
+  .then(user => res.status(201).send(user[1]))
+  .catch((err) => res.send(err));
+})
 
 router.get("/me", (req, res) => {
   if (!req.user) return res.sendStatus(401);

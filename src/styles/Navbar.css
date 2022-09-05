@@ -3,7 +3,7 @@
 }
 
 .navbar-text{
-    font-size: 25px;
+    font-size: 16px;
 }
 
 .style-navbar{
@@ -23,16 +23,19 @@
 .search{
     width: 30px;
     height: 30px;
-    background-color:rgba(1,180,228, 1);
+    background-color:rgb(193 181 181 / 30%);
     border-radius: 50%;
-    padding: 5px;
+    padding: 4px;
+    color: var(--primary-color);
+    margin-right: 4px;
 }
 
 .profile{
     width: 30px;
     height: 30px;
-    background-color:rgba(1,180,228, 1);
+    background-color: rgb(193 181 181 / 30%);
     border-radius: 50%;
-    padding: 5px;
+    padding: 4px;
+    color: var(--primary-color);
 }
 

@@ -1,14 +1,18 @@
 .movie-card-container{
-    font-size: 1.5rem;
     color: var(--primary-color);
     text-align: center;
 }
 
+.movie-card-container h4{
+    font-size: 20px;
+}
+
 .movie-card-container img{
     border-radius: 10px;
-    width: 230px;
-    height: 345px;
+    width: 130px;
+    height: 245px;
 }
+/*width 230px heigth 245px desk*/
 
 .movie-card-container h4{
     margin-top: 10px;

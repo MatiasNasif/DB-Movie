@@ -23,8 +23,17 @@ export const userLogout = createAsyncThunk("USER_LOGOUT", () => {
   });
 });
 
+export const userUpdate = createAsyncThunk("USER_UPDATE", (data) => {
+  const userId = JSON.parse(localStorage.getItem("user")).id;
+  return axios.put(`/api/users/${userId}`, data)
+  .then((user)=> {
+    localStorage.setItem("user", JSON.stringify(user.data));
+    return user.data;
+  })
+});
+
 const userReducer = createReducer(null, {
-  [getUser.fulfilled]: (state, action) => action.payload
+  [getUser.fulfilled]: (state, action) => action.payload,
 });
 
 export default userReducer;
