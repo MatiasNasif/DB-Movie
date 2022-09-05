@@ -13,6 +13,13 @@
 
 .favorite-card-container div button {
   margin-bottom: 20px;
+  background: var(--gradient-button);
+  border: none;   
+  padding: 10px;
+  width: 50%;
+  color: var(--primary-color);
+  font-size: 20px;
+  border-radius: 4px;
 }
 
 .favorite-card-container h4 {

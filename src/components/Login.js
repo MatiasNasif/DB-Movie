@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { userLogin } from "../store/user";
 import { useNavigate } from "react-router";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const email = useInput();
@@ -55,6 +56,7 @@ const Login = () => {
           <br></br>
           <input type="password" placeholder="Password" {...password}></input>
         </Form.Group>
+        <h5>you are not registered yet ? <Link className="link-register" to="/register">register</Link></h5>
         <button className="button-login" type="submit">Submit</button>
       </Form>
     </div>

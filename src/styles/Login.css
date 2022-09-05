@@ -28,3 +28,12 @@ input {
     backdrop-filter: blur(50px);
     color: var(--primary-color);
 }
+
+h5{
+    font-size: 15px;
+}
+
+.link-register{
+    text-decoration: none;
+    color: rgb(5, 140, 202)
+}

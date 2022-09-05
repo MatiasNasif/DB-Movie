@@ -1,13 +1,38 @@
 .navbar{
-    background-color: black
+    background-color: var(--secundary-color);
 }
 
 .navbar-text{
     font-size: 25px;
 }
 
+.style-navbar{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+
 .logo{
+    width: 150px;
+    height: 50px;
+    white-space: nowrap;
+}
+
+.search{
+    width: 30px;
+    height: 30px;
+    background-color:rgba(1,180,228, 1);
+    border-radius: 50%;
     padding: 5px;
-    width: 50%;
+}
+
+.profile{
+    width: 30px;
+    height: 30px;
+    background-color:rgba(1,180,228, 1);
+    border-radius: 50%;
+    padding: 5px;
 }
 

@@ -9,7 +9,7 @@ const MovieCard = ({ movie }) => {
       <Link to={`/movie/${movie.id}`}>
         <img src={`${imgUrl}${movie.poster_path}`} alt={movie.original_title}></img>
       </Link>
-      <h4>{movie.original_title}</h4>
+      <h4>{movie.title}</h4>
     </div>
   );
 };

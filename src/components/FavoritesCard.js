@@ -1,5 +1,4 @@
 import "../styles/FavoritesCard.css"
-import iconRemove from "../assets/iconRemove.svg"
 import { useDispatch } from "react-redux";
 import { getFavorites, removeFavorite} from "../store/favorites";
 
@@ -22,8 +21,7 @@ const FavoritesCard = ({ movieFavorite }) => {
       <h4>{movieFavorite.original_title}</h4>
       <div>
       <button onClick={()=>{handleRemove(movieFavorite)}}>
-        Remove Favorites
-        <img style={{width:"30px", height:"30px"}} src={iconRemove} alt="icon-remove"></img>
+        Remove
         </button>
         </div>
     </div>

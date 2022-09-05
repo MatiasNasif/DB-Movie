@@ -3,10 +3,11 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link, useNavigate } from "react-router-dom";
-//import iconLogoNavbar from "../assets/iconLogoNavbar.svg";
 import { userLogout } from "../store/user.js";
 import { useDispatch } from "react-redux";
 import iconLogo from "../assets/iconLogo.svg"
+import iconSearch from "../assets/iconSearch.svg"
+import iconProfile from "../assets/iconProfile.svg"
 
 const NavBar = () => {
   const dispatch = useDispatch();
@@ -23,7 +24,21 @@ const NavBar = () => {
     <header>
       <div className="navbar">
         <Navbar variant="dark" expand="lg" fixed="top">
-          <Container>
+          <Container className="style-navbar">
+            <Link to="/">
+              <img
+                className="profile"
+                src={iconProfile}
+                alt="logo-profile"
+              />
+            </Link>
+            <Link to="/">
+              <img
+                className="search"
+                src={iconSearch}
+                alt="logo-search"
+              />
+            </Link>
             <Link to="/">
               <img
                 className="logo"
