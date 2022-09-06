@@ -46,7 +46,7 @@ const NavBar = () => {
                 <Nav.Link className="navbar-text" as={Link} to="/">
                   Movies
                 </Nav.Link>
-                <Nav.Link className="navbar-text" href="#tvshows">
+                <Nav.Link className="navbar-text" as={Link} to="/tvShows">
                   TV Shows
                 </Nav.Link>
 
