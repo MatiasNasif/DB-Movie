@@ -11,6 +11,7 @@ import SearchGrid from "./components/SearchGrid";
 import Search from "./components/Search";
 import Profile from "./components/Profile";
 import TvShowsGrid from "./components/TvShowsGrid";
+import Subscriptions from "./components/Subscriptions";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/search" element={<Search/>} />
           <Route path="/profile" element={<Profile/>} />
           <Route path="/tvShows" element={<TvShowsGrid/>} />
+          <Route path="/subscriptions" element={<Subscriptions/>} />
 
           <Route path="/admin/users" element={<UsersGrid/>} />
         </Routes>

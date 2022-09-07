@@ -38,7 +38,7 @@ const Register = () => {
       })
     )
       .then((regUser) => {
-        if (!regUser.error) navigate("/login"); //redirecciona a un usuario registrado al log in
+        if (!regUser.error) navigate("/subcriptions"); //redirecciona a un usuario registrado a subscriptions
       })
       .catch((err) => console.log(err));
   };
