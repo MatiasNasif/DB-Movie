@@ -1,0 +1,54 @@
+.subscriptions-container{
+    color: var(--primary-color);
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.subscriptions-container h1{
+    text-align: center;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff,
+  0 0 20px rgba(1,180,228, 1), 0 0 30px rgba(1,180,228, 1),
+  0 0 40px rgba(1,180,228, 1), 0 0 55px rgba(1,180,228, 1),
+  0 0 75px rgba(1,180,228, 1);
+  margin-bottom: 25px;
+}
+
+.subtitle-subcriptions{
+    text-align: center;
+    margin-bottom: 25px;
+}
+    
+.subscriptions-container div{
+    padding: 5px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(1,180,228, 1);
+    border-radius: 10px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    padding: 3px;
+    padding-bottom: 15px;
+}
+
+.subscriptions-container div h5{
+    padding-left: 12px;
+    font-size: 17px;
+}   
+
+.subscriptions-container div ul{
+    list-style: circle;
+}
+
+.subscriptions-container div ul li{
+    font-size: 13px;
+}
+
+.subscriptions-container div button{
+    background: var(--gradient-button);
+    border: none;
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
