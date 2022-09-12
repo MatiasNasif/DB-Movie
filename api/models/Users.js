@@ -37,6 +37,10 @@ User.init(
       type: Sequelize.BOOLEAN,
       defaultValue: false,
     },
+    plan: {
+      type: Sequelize.STRING,
+      defaultValue: null,
+    },
   },
   { sequelize: db, modelName: "user" }
 );

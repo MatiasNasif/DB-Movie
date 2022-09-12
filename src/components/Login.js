@@ -36,7 +36,14 @@ const Login = () => {
       })
     )
       .then(() => {
-        if (localStorage.getItem("user")) navigate("/"); //redirecciona a un usuario logueado al home
+        if(localStorage.getItem("user").admin === true){
+          navigate("/")
+        }else if (localStorage.getItem("user").plan === "basico" || localStorage.getItem("user").plan === "premium") { 
+          navigate("/") // si ya esta subscrito lleva a login o si sos admin no elige plan 
+        }else{
+          navigate("/subscriptions") // redirecciona a un usuario logueado a subscriptions
+        } 
+
       })
       .catch((err) => console.log(err));
   };

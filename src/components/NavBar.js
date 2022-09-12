@@ -51,8 +51,8 @@ const NavBar = () => {
                 </Nav.Link>
 
                 {
-                  // condiciones para usuario
-                  user && user.admin === false ? (
+                  // condiciones para usuario si es admin y el plan basico no puede ver favoritos 
+                  user && user.admin === false && user.plan === "premium" ? (
                     <Nav.Link className="navbar-text" as={Link} to="/favorites">
                       Favorites
                     </Nav.Link>

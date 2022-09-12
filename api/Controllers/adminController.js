@@ -10,13 +10,24 @@ router.get("/users", (req, res) => {
 
 //promueve un usario a admin
 router.put("/:id", (req, res) => {
-    Users.update({admin: true},{
+    Users.update({admin: true },{
         where: { id: req.params.id },
         returning: true,
         plain: true
     })
     .then(user => res.status(201).send(user[1]))
     .catch((err) => res.send(err));
+})
+
+//promueve un usario a user
+router.put("/:id/false", (req, res) => {
+  Users.update({admin: false },{
+      where: { id: req.params.id },
+      returning: true,
+      plain: true
+  })
+  .then(user => res.status(201).send(user[1]))
+  .catch((err) => res.send(err));
 })
 
 //borra un usuario

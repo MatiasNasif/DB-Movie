@@ -9,6 +9,10 @@ export const putAdminUsers = createAsyncThunk("PUT_ADMIN_USER", (user) => {
   return axios.put(`/api/admin/${user.id}`);
 });
 
+export const falseAdminUsers = createAsyncThunk("FALSE_ADMIN_USER", (user) => {
+  return axios.put(`/api/admin/${user.id}/false`);
+});
+
 export const deleteAdminUsers = createAsyncThunk("DELETE_ADMIN_USER", (user) => {
   return axios.delete(`/api/admin/${user.id}`);
 });
