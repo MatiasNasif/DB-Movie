@@ -1,52 +1,98 @@
-# - TMDB
+<p align="center">
+  <img src="https://img.shields.io/badge/Versión-1.0.0-blue.svg" alt="Versión">
+  <img src="https://img.shields.io/badge/Estado-En%20curso-yellow.svg" alt="Estado del proyecto">
+  <img src="https://img.shields.io/badge/Licencia-MIT-green.svg" alt="Licencia">
+</p>
 
-![logop5](https://p5-hall-of-fame.s3.amazonaws.com/p5logo.png)
+<p align="center">
+ <img src="public/logo.png" align="center" alt="The Movie Database" />
+</p>
 
-### Objetivos
+# <p align="center">The Movie Database</p>
 
-En este proyecto, crearás una aplicación que muestre películas y programas de televisión. Para eso, consumirás la información de la API de [_The Movie Database_ (TMDB)](https://www.themoviedb.org/).
+The Movie Database es una aplicación de películas y programas de televisión es una plataforma que te permite descubrir y explorar una amplia variedad de contenido audiovisual. Con esta app, podrás buscar y listar películas, ver detalles, crear usuarios, agregar películas a una lista de favoritos y mucho más. Utiliza la API de The Movie Database (TMDB) para proporcionar información actualizada sobre películas y programas. ¡Disfruta de una experiencia de entretenimiento personalizada y descubre nuevos títulos para ver!
 
-Para armar el _front-end_, aplicarás lo aprendido hasta ahora.
+## Requisitos
 
-Para el _back-end_, deberás configurar una base de datos y construir las funcionalidades detalladas a continuación.
+Asegúrate de cumplir con los siguientes **requisitos** del entorno antes de ejecutar la aplicación:
 
-⚠️ **Importante**: La información de los usuarios deberá **persistir** en el _back-end_.
+- Node.js (versión recomendada: 14.x o superior)
+- NPM (Node Package Manager)
 
-### ¿Qué Debe Tener Tu Aplicación?
+## Dependencias del proyecto
 
-👩‍🏫👨‍🏫 Para armar la aplicación trabajaremos con el [**método MoSCoW**](https://www.itdo.com/blog/moscow-que-es-y-como-priorizar-en-el-desarrollo-de-tu-aplicacion/), una técnica que sirve para determinar prioridades de forma estratégica y ordenada.
+A continuación se enumeran las dependencias específicas del proyecto incluidas en el archivo package.json:
 
-En este sentido, deberás enfocarte primero en las funcionalidades _Must Have_ (de prioridad alta) antes de avanzar a funcionalidades _Should Have_ (prioridad media).
+- "@reduxjs/toolkit": "^1.8.3",
+- "axios": "^0.27.2",
+- "bcrypt": "^5.0.1",
+- "cookie-parser": "^1.4.6",
+- "cors": "^2.8.5",
+- "express": "^4.18.1",
+- "express-session": "^1.17.3",
+- "morgan": "^1.10.0",
+- "passport": "^0.6.0",
+- "passport-local": "^1.0.0",
+- "pg": "^8.7.3",
+- "pg-hstore": "^2.3.4",
+- "react": "^17.0.2",
+- "react-bootstrap": "^2.4.0",
+- "react-bootstrap-alert": "^1.0.7",
+- "react-dom": "^17.0.2",
+- "react-icons": "^4.4.0",
+- "react-redux": "^8.0.2",
+- "react-router": "^6.3.0",
+- "react-router-dom": "^6.3.0",
+- "react-scripts": "^4.0.3",
+- "redux": "^4.2.0",
+- "redux-logger": "^3.0.6",
+- "sequelize": "^6.20.1"
 
-### Requisitos
+## Instalación
 
-👩‍🏫👨‍🏫 Para este proyecto, enfocate en completar las tareas de **prioridad alta** y **media**. Considerá las de **prioridad normal** y **baja** como un desafío para desarrollar tu portfolio.
+1. Clona este repositorio en tu máquina local.
+2. Navega hasta el directorio del proyecto.
+**cd DB-Movie**
+3. Instala las dependencias utilizando el administrador de paquetes npm.
+**npm install**
+4. Actualiza las dependencias utilizando el administrador de paquetes npm.
+**npm update**
 
-📕 **Prioridad Alta** (_Must Have_)
+## Ejecución
+
+Para ejecutar la aplicación en tu entorno de desarrollo, sigue los siguientes pasos:
+
+1. Asegúrate de estar en el directorio del proyecto.
+**cd DB-Movie**
+2. Inicia la aplicación en una terminal.
+**npm run client**
+3. Inicia la aplicación en otra terminal.
+**npm run server**
+
+## Características
 
 - Buscar y listar películas.
 - Ver los detalles de una película o programa de televisión.
 - Crear usuarios.
-- _Loguear_ y _desloguear_ usuarios.
-
-📘 **Prioridad Media** (_Should Have_)
-
+- Loguear y desloguear usuarios.
 - Agregar una película o programa a una lista de favoritos.
 - Ver una lista de favoritos.
 - Remover una película o programa de una lista de favoritos.
-- Diferenciar las rutas de _front-end_ para películas y programas de televisión.
+- Diferenciar las rutas de front-end para películas y programas de televisión.
+- Mantener sesión abierta ante un cierre del navegador o actualización de la página.
 
-📗 **Prioridad Normal** (_Could Have_)
+## Contribución
 
-- Buscar usuarios.
-- Ver el perfil de un usuario específico (con sus películas o programas favoritos).
-- Mantener sesión abierta ante un cierre del _browser_ o `refresh`.
+Si deseas contribuir a este proyecto, siéntete libre de enviar tus sugerencias o mejoras a través de problemas (issues) y solicitudes de extracción (pull requests). Tu ayuda es siempre bienvenida.
 
-📓 **Prioridad Baja** (_Won't Have_)
+## Autores
 
-- _Full responsive_.
-- _Loguear_ usuarios a través de su cuenta en Google.
+**Matias Nasif** - Desarrollo frontend y backend.
 
-### Pledu
+## Licencia
 
-Hacé [_click_ acá](https://pledu.plataforma5.la/bootcamp/omdb/solo%20week-581874b7) para acceder al módulo correspondiente en Pledu.
+Este proyecto está bajo la Licencia [MIT](https://opensource.org/licenses/MIT).
+
+## Link del Deploy
+
+Próximamente
