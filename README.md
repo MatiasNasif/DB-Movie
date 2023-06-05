@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
- <img src="public/logo.png" align="center" alt="The Movie Database" />
+ <img src="public/logo.png" align="center" alt="The Movie Database" width="200" height="150"/>
 </p>
 
 # <p align="center">The Movie Database</p>
